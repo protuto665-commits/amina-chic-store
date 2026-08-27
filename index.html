@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantalon en Lin | Pack 3 & Pack 4</title>
+<style>
+:root{--pink:#d9468d;--dark:#23161d;--soft:#fff6fa;--line:#f0d9e4;--muted:#76666e;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Tahoma",sans-serif;color:var(--dark);background:linear-gradient(#fff,#fff7fb)}
+.wrap{max-width:680px;margin:auto;padding:0 14px 40px}.top{background:#241720;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:700}
+.hero{text-align:center;padding:28px 8px 18px}.badge{display:inline-block;background:#ffe5f1;color:var(--pink);padding:8px 15px;border-radius:999px;font-weight:800}
+h1{font-size:32px;line-height:1.2;margin:14px 0 8px}.hero p{color:var(--muted);margin:0;line-height:1.7}
+.trust{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}.trust span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px;margin:14px 0;box-shadow:0 10px 30px rgba(64,20,40,.05)}
+.step{font-size:14px;color:var(--pink);font-weight:800}.card h2{margin:5px 0 12px;font-size:20px}
+.packs{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pack{border:2px solid var(--line);background:#fff;border-radius:18px;padding:15px;cursor:pointer;text-align:center}.pack b{display:block;font-size:18px}.pack strong{display:block;color:var(--pink);font-size:25px;margin:6px}.pack small{color:var(--muted)}.pack.active{border-color:var(--pink);background:#fff1f7;box-shadow:0 0 0 3px #ffe3ef}
+.hint{margin:0 0 12px;color:var(--muted);font-size:14px}.options{display:flex;flex-wrap:wrap;gap:9px}.option{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;cursor:pointer;font-size:14px}.option.active{border-color:var(--pink);background:#fff0f6;color:var(--pink);font-weight:800}.option.disabled{opacity:.38}
+input,select{width:100%;padding:14px;border:1px solid var(--line);border-radius:13px;margin:6px 0;font-size:15px;background:#fff}
+.cta{width:100%;padding:17px;border:0;border-radius:16px;background:linear-gradient(135deg,#e34c98,#bd3cd1);color:#fff;font-size:18px;font-weight:800;cursor:pointer;margin-top:10px;box-shadow:0 10px 22px rgba(217,70,141,.25)}.cta:disabled{opacity:.6}
+.secure{text-align:center;color:var(--muted);font-size:12px;margin:10px 0 0}.message{text-align:center;font-weight:800;margin-top:12px}.success{background:#f0fdf4;border:1px solid #bbf7d0;color:var(--green);border-radius:16px;padding:16px;display:none;text-align:center}
+.footer{text-align:center;color:#98868f;font-size:12px;padding:10px}
+@media(max-width:450px){h1{font-size:27px}.wrap{padding:0 10px 30px}}
+</style>
+</head>
+<body>
+<div class="top">🚚 التوصيل مجاني &nbsp; • &nbsp; 💵 الدفع عند الاستلام</div>
+<main class="wrap">
+  <section class="hero">
+    <div class="badge">🔥 عرض خاص</div>
+    <h1>اختاري Pack ديالك<br>وألوانك المفضلة</h1>
+    <p>سروال كتان واسع، مريح وأنيق للاستعمال اليومي</p>
+    <div class="trust"><span>✓ الدفع عند الاستلام</span><span>✓ التوصيل مجاني</span><span>✓ تأكيد الطلب هاتفياً</span></div>
+  </section>
+
+  <div class="success" id="success"></div>
+
+  <section class="card">
+    <div class="step">الخطوة 1</div><h2>اختاري الـ Pack</h2>
+    <div class="packs">
+      <button class="pack active" type="button" data-pack="3" data-price="219"><b>Pack 3</b><strong>219 DH</strong><small>اختاري 3 ألوان</small></button>
+      <button class="pack" type="button" data-pack="4" data-price="249"><b>Pack 4</b><strong>249 DH</strong><small>اختاري 4 ألوان</small></button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="step">الخطوة 2</div><h2>اختاري الألوان <span id="count">(0/3)</span></h2>
+    <p class="hint" id="hint">خاصك تختاري بالضبط 3 ألوان.</p>
+    <div class="options" id="colors">
+      <button type="button" class="option" data-value="كحل">🖤 كحل</button>
+      <button type="button" class="option" data-value="بيج مغلوق">🤎 بيج مغلوق</button>
+      <button type="button" class="option" data-value="بيج فاتح">🤍 بيج فاتح</button>
+      <button type="button" class="option" data-value="وردي">🌸 وردي</button>
+      <button type="button" class="option" data-value="أخضر">💚 أخضر</button>
+      <button type="button" class="option" data-value="أصفر">💛 أصفر</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="step">الخطوة 3</div><h2>اختاري المقاس</h2>
+    <div class="options" id="sizes">
+      <button type="button" class="option" data-value="M">M</button><button type="button" class="option" data-value="L">L</button>
+      <button type="button" class="option" data-value="XL">XL</button><button type="button" class="option" data-value="2XL">2XL</button>
+      <button type="button" class="option" data-value="3XL">3XL</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="step">الخطوة 4</div><h2>معلومات التوصيل</h2>
+    <input id="name" placeholder="الاسم الكامل *">
+    <input id="phone" inputmode="tel" placeholder="رقم الهاتف *">
+    <select id="city">
+      <option value="">اختاري المدينة *</option>
+      <option>Agadir</option><option>Aït Melloul</option><option>Al Hoceïma</option><option>Azemmour</option><option>Azilal</option><option>Beni Mellal</option><option>Ben Guerir</option><option>Berkane</option><option>Boujdour</option><option>Casablanca</option><option>Chefchaouen</option><option>Dakhla</option><option>El Jadida</option><option>Errachidia</option><option>Essaouira</option><option>Fès</option><option>Guelmim</option><option>Kenitra</option><option>Khouribga</option><option>Laâyoune</option><option>Larache</option><option>Marrakech</option><option>Martil</option><option>Meknès</option><option>Mohammedia</option><option>Nador</option><option>Ouarzazate</option><option>Oujda</option><option>Rabat</option><option>Salé</option><option>Safi</option><option>Settat</option><option>Tanger</option><option>Taroudant</option><option>Taza</option><option>Témara</option><option>Tétouan</option><option>Autre</option>
+    </select>
+    <input id="address" placeholder="العنوان بالتفصيل (اختياري)">
+    <button class="cta" id="submit" type="button">🛍️ تأكيد الطلب — <span id="price">219 DH</span></button>
+    <div class="secure">من بعد الطلب غادي نتاصلو بيك لتأكيده ❤️</div>
+    <div class="message" id="message"></div>
+  </section>
+  <div class="footer">Amina Store © 2026</div>
+</main>
+
+<script>
+/* PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE */
+const ORDER_ENDPOINT = "PUT_YOUR_APPS_SCRIPT_URL_HERE";
+
+let pack=3, colors=[], size="";
+const packs=[...document.querySelectorAll(".pack")], colorBtns=[...document.querySelectorAll("#colors .option")], sizeBtns=[...document.querySelectorAll("#sizes .option")];
+const count=document.getElementById("count"), hint=document.getElementById("hint"), price=document.getElementById("price"), msg=document.getElementById("message");
+
+function refresh(){
+  count.textContent=`(${colors.length}/${pack})`;
+  hint.textContent=colors.length===pack ? `ممتاز ✓ اخترتي ${pack} ألوان.` : `خاصك تختاري ${pack-colors.length} لون/ألوان آخرين.`;
+  colorBtns.forEach(b=>{const a=colors.includes(b.dataset.value);b.classList.toggle("active",a);b.classList.toggle("disabled",!a&&colors.length>=pack)});
+}
+packs.forEach(b=>b.onclick=()=>{pack=+b.dataset.pack;packs.forEach(x=>x.classList.toggle("active",x===b));if(colors.length>pack)colors=colors.slice(0,pack);price.textContent=b.dataset.price+" DH";refresh()});
+colorBtns.forEach(b=>b.onclick=()=>{const v=b.dataset.value;if(colors.includes(v))colors=colors.filter(x=>x!==v);else if(colors.length<pack)colors.push(v);refresh()});
+sizeBtns.forEach(b=>b.onclick=()=>{size=b.dataset.value;sizeBtns.forEach(x=>x.classList.toggle("active",x===b))});
+document.getElementById("submit").onclick=async()=>{
+ const name=document.getElementById("name").value.trim(),phone=document.getElementById("phone").value.trim(),city=document.getElementById("city").value,address=document.getElementById("address").value.trim();
+ if(!name||!phone||!city){alert("عافاك عمّر الاسم ورقم الهاتف والمدينة.");return}
+ if(colors.length!==pack){alert(`عافاك اختار بالضبط ${pack} ألوان.`);return}
+ if(!size){alert("عافاك اختار المقاس.");return}
+ if(ORDER_ENDPOINT.includes("PUT_YOUR")){alert("خاصك أولاً تربط الصفحة بـ Google Sheets. شوف ملف INSTRUCTIONS.");return}
+ const btn=document.getElementById("submit");btn.disabled=true;btn.textContent="جاري تسجيل الطلب...";
+ const order={name,phone,city,address,pack:`Pack ${pack}`,colors:colors.join(" - "),size,price:pack===3?219:249,time:new Date().toLocaleString("ar-MA")};
+ try{
+   await fetch(ORDER_ENDPOINT,{method:"POST",body:JSON.stringify(order),headers:{"Content-Type":"text/plain"}});
+   document.getElementById("success").style.display="block";
+   document.getElementById("success").textContent=`شكراً ${name} ❤️ تسجل الطلب ديالك بنجاح. غادي نتاصلو بيك لتأكيده.`;
+   window.scrollTo({top:0,behavior:"smooth"});
+   document.querySelectorAll("input").forEach(x=>x.value="");document.getElementById("city").value="";colors=[];size="";sizeBtns.forEach(x=>x.classList.remove("active"));refresh();
+ }catch(e){alert("وقع مشكل فالإنترنت. عاود جرّب.");}
+ btn.disabled=false;btn.innerHTML=`🛍️ تأكيد الطلب — <span id="price">${pack===3?219:249} DH</span>`;
+};
+refresh();
+</script>
+</body>
+</html>
